@@ -1,0 +1,55 @@
+{
+  "name": "anglish",
+  "displayName": "anglish",
+  "description": "Translate English to Anglish",
+  "publisher": "mishelashala",
+  "version": "0.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mishelashala/anglish"
+  },
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./src/index.js",
+  "activationEvents": [
+    "onLanguage:plaintext"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "plaintext",
+        "extensions": [
+          ".txt"
+        ]
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Extension Settings",
+      "properties": {
+        "yourExtension.wordMappings": {
+          "type": "object",
+          "default": {},
+          "description": "Custom word mappings for replacements."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^9.9.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
